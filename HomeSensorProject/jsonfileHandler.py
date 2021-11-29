@@ -91,8 +91,8 @@ def checkusr(jsondata):
             #Check if the username exists and that there is a match between passwords
             if (user['username'] == username and check_password(password,user['password'])):
 
-                #Update logininfo in the users file
-                user['loggedIn'] = "True"
+                #Update logininfo in the users file (future work)
+                #user['loggedIn'] = "True"
                 writeJsonFile(loadeddata, users_jsonfile)
                 return True
     return False

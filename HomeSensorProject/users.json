@@ -1,0 +1,22 @@
+{
+ "users": [
+  {
+   "userId": "1",
+   "username": "mohammem",
+   "password": "$2a$12$QG0PBnHkyBffB.0ldrV/uOB6Cuhib3qlF7yorpDFc8y6Ij1QfKJ5W",
+   "loggedIn": "True"
+  },
+  {
+   "userId": "2",
+   "username": "aliem",
+   "password": "$2a$12$QG0PBnHkyBffB.0ldrV/uOGuxG1.gT7wQayRHKw/PmrLnObqL2RDG",
+   "loggedIn": "False"
+  },
+  {
+   "userId": "3",
+   "username": "imanem",
+   "password": "$2a$12$QG0PBnHkyBffB.0ldrV/uOrqmM3Z3TmBswNNLPU7/o.Tb.4OEC.FO",
+   "loggedIn": "False"
+  }
+ ]
+}

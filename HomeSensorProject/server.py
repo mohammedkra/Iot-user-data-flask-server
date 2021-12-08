@@ -1,9 +1,9 @@
 from flask import Flask, request, Response, session
 from flask_sqlalchemy import SQLAlchemy
 from flask_session import Session
-from jsonfileHandler import readStatusHistory, readLatestState, checkusr
+from jsonfileHandler import readStatusHistory
 from exportKeys import readPrivKey
-from request_validation import check_key, check_value
+from request_handler import handle_check_user, handle_validate_input, handle_read_latest
 import json
 
 app = Flask(__name__)
@@ -31,10 +31,10 @@ def do_get():
     if "logIn" in session:
 
         #Check if the file reading succeeds
-        if (not readLatestState('state.json')):
+        if (not handle_read_latest('state.json')):
             response = Response ("Not found", status = 404, mimetype='application/text')
         else:
-            response = Response (readLatestState('state.json'), status = 200, mimetype = 'application/json')
+            response = Response (handle_read_latest('state.json'), status = 200, mimetype = 'application/json')
     else:
         response = Response ("Unautherized", status = 401, mimetype='application/text')
     return(response)
@@ -62,10 +62,10 @@ def do_get_alarm_latest():
     if "logIn" in session:
 
         #Check if file reading succeeds
-        if(not readLatestState('burglarAlarm.json')):
+        if(not handle_read_latest('burglarAlarm.json')):
             response = Response ("Not found", status = 404, mimetype='application/text')
         else:
-            response = Response (readLatestState('burglarAlarm.json'), status = 200, mimetype = 'application/json')
+            response = Response (handle_read_latest('burglarAlarm.json'), status = 200, mimetype = 'application/json')
     else:
         response = Response ("Unautherized", status = 401, mimetype='application/text')
     return(response)
@@ -83,8 +83,8 @@ def do_logout():
 def do_login():
     params = json.loads(request.data)
 
-    if check_key(params) and check_value(params):
-        if checkusr(params):
+    if handle_validate_input(params):
+        if handle_check_user(params):
             session['logIn'] = "True"
             response = Response ("Succesfull Autherization", status = 201, mimetype='application/text')
 
@@ -94,4 +94,4 @@ def do_login():
         response = Response ("Invalid input", status = 2101, mimetype='application/text')
     return(response)
 
-app.run('127.0.0.1',debug=True, threaded = True, ssl_context=('server.crt', 'server.key'))
+app.run('127.0.0.1',debug=True, threaded = True, ssl_context=('cert.pem', 'key.pem'))

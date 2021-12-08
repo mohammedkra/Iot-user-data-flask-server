@@ -1,8 +1,9 @@
 import bcrypt
 
+salt_file = "data_center/salt.txt"
 #THIS METHOD RETRIEVES THE BCRYPT SALT
 def get_salt():
-    with open("salt.txt","r") as file:
+    with open(salt_file,"r") as file:
         salt = file.read()
     return salt
 

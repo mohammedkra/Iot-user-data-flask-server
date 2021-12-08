@@ -1,6 +1,5 @@
 import json
 import os
-from bcrypter import check_password
 state_json_file = 'state.json'
 users_jsonfile = 'users.json'
 
@@ -49,17 +48,7 @@ def writeStatus(data, jsonfile):
         #Indicates that the operation succeeded
         return True
 
-#THIS METHOD LOADS CURRENT STATE FROM SPECIFIED FILE
-def readLatestState(jsonfile):
 
-    #Check if file exists or empty
-    if(not checkFile(jsonfile) or checkFileIfEmpty(jsonfile) == 0):
-        return False
-    
-    with open(jsonfile, 'r') as file:
-        object = json.load(file)
-        list = object ['states']
-    return json.dumps(list[-1])
 
 #THIS METHOD READS SENSOR STATUS HISTORY
 def readStatusHistory():
@@ -72,27 +61,3 @@ def readStatusHistory():
         object = json.load(file)
         json_object = json.dumps(object['states'])
     return json_object
-
-#THIS METHOD CHECKS USER AUTHEN
-def checkusr(jsondata):
-
-    #Retrive the username and password from the sent data
-    username = jsondata ['username']
-    password = jsondata ['password']
-
-    #Load the file where users are stored
-    with open (users_jsonfile) as file:
-        loadeddata = json.load(file)
-        userlist = loadeddata['users']
-
-        #Search for the user in the file
-        for user in userlist:
-
-            #Check if the username exists and that there is a match between passwords
-            if (user['username'] == username and check_password(password,user['password'])):
-
-                #Update logininfo in the users file (future work)
-                #user['loggedIn'] = "True"
-                writeJsonFile(loadeddata, users_jsonfile)
-                return True
-    return False

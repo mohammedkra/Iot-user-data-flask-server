@@ -1,8 +1,6 @@
 *.pem
-*.crt
-*.key
 server.key.org
-sessions_priv_key
+session_priv_key
 server.csr
 salt.txt
 db.sqlite3

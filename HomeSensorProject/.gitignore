@@ -1,4 +1,5 @@
-*.pem
+cert.pem
+key.pem
 *.crt
 *.key
 server.key.org

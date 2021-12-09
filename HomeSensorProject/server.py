@@ -1,27 +1,10 @@
 from flask import Flask, request, Response, session
-from flask_sqlalchemy import SQLAlchemy
-from flask_session import Session
-from exportKeys import readPrivKey
 from request_handler import handle_check_user, handle_validate_input, handle_read_latest, handle_read_history
+from server_configuration.configure import configure_app
 import json
 
 app = Flask(__name__)
-
-#Retrieve the application's private key
-session_secretKey = readPrivKey()
-
-#Configure the application to use the private key
-app.config['SECRET_KEY'] = session_secretKey
-
-#Configure the application to use db.sqlite3 for storing sessions
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite3'
-app.config['SESSION_TYPE'] = 'sqlalchemy'
-db = SQLAlchemy(app)
-app.config['SESSION_SQLALCHEMY'] = db
-
-#Initiate a server session
-server_sessions = Session()
-server_sessions.init_app(app)
+configure_app(app)
 
 @app.get("/home")
 def do_gethome():

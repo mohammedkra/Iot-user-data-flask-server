@@ -1,9 +1,6 @@
-import json
 import os
-state_json_file = 'state.json'
-users_jsonfile = 'users.json'
+import json
 
-#THIS METHOD CHECKS IF FIlE EXISTS
 def checkFile(jsonfile):
     return os.path.exists(jsonfile)
 
@@ -24,7 +21,8 @@ def assigStateId(json_file):
         return id
 
 #THIS METHOD WRITES STATE DATA TO SPECIFIED JSONFILE
-def writeStatus(data, jsonfile):
+def writeStatus(data, file_name):
+    jsonfile = "data_center/"+file_name
 
     #Check if file exists
     if(not checkFile(jsonfile) or checkFileIfEmpty(jsonfile) == 0):
@@ -47,17 +45,3 @@ def writeStatus(data, jsonfile):
 
         #Indicates that the operation succeeded
         return True
-
-
-
-#THIS METHOD READS SENSOR STATUS HISTORY
-def readStatusHistory():
-
-    #Check if file exists
-    if(not checkFile(state_json_file) or checkFileIfEmpty(state_json_file) == 0):
-        return False
-    
-    with open(state_json_file, 'r') as file:
-        object = json.load(file)
-        json_object = json.dumps(object['states'])
-    return json_object

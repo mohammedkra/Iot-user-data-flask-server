@@ -1,9 +1,8 @@
 from flask import Flask, request, Response, session
 from flask_sqlalchemy import SQLAlchemy
 from flask_session import Session
-from jsonfileHandler import readStatusHistory
 from exportKeys import readPrivKey
-from request_handler import handle_check_user, handle_validate_input, handle_read_latest
+from request_handler import handle_check_user, handle_validate_input, handle_read_latest, handle_read_history
 import json
 
 app = Flask(__name__)
@@ -25,14 +24,14 @@ server_sessions = Session()
 server_sessions.init_app(app)
 
 @app.get("/home")
-def do_get():
+def do_gethome():
 
     #Check if user loggedin
     if "logIn" in session:
 
         #Check if the file reading succeeds
         if (not handle_read_latest('state.json')):
-            response = Response ("Not found", status = 404, mimetype='application/text')
+            response = Response ("Note found", status = 404, mimetype='application/text')
         else:
             response = Response (handle_read_latest('state.json'), status = 200, mimetype = 'application/json')
     else:
@@ -46,10 +45,10 @@ def do_getStateHistory():
     if "logIn" in session:
 
         #Check if the file reading succeeds
-        if (not readStatusHistory()):
+        if (not handle_read_history()):
             response = Response ("Not found", status = 404, mimetype='application/text')
         else:
-            response = Response (readStatusHistory(), status = 200, mimetype = 'application/json')
+            response = Response (handle_read_history(), status = 200, mimetype = 'application/json')
     else:
         response = Response ("Unautherized", status = 401, mimetype='application/text')
     return(response)

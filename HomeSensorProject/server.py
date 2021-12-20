@@ -1,5 +1,5 @@
 from flask import Flask, request, Response, session
-from request_handler import handle_check_user, handle_validate_input, handle_read_latest, handle_read_history
+from request_handler import handle_check_user, handle_getDevice_info, handle_validate_input, handle_read_latest, handle_read_history
 from server_configuration.configure import configure_app
 import json
 
@@ -20,6 +20,18 @@ def do_gethome():
     else:
         response = Response ("Unautherized", status = 401, mimetype='application/text')
     return(response)
+
+@app.get("/deviceInfo")
+def do_getDevInfo():
+    #Check if user loggedin
+    if "logIn" in session:
+        if(not handle_getDevice_info()):
+            response = Response ("Note found", status = 404, mimetype='application/text')
+        else:
+            response = Response (handle_getDevice_info(), status = 200, mimetype = 'application/json')
+    else:
+        response = Response ("Unautherized", status = 401, mimetype='application/text')
+    return (response)
 
 @app.get("/state/history")
 def do_getStateHistory():

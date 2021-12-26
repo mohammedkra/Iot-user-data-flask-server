@@ -1,10 +1,14 @@
 from flask import Flask, request, Response, session
 from request_handler import handle_check_user, handle_getDevice_info, handle_validate_input, handle_read_latest, handle_read_history
 from server_configuration.configure import configure_app
+from logging import FileHandler, WARNING
 import json
 
 app = Flask(__name__)
 configure_app(app)
+
+file_handler = FileHandler("error.txt")
+app.logger.addHandler(file_handler)
 
 @app.get("/home")
 def do_gethome():

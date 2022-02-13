@@ -1,5 +1,5 @@
 #!/bin/bash
-
+echo "antidos script running"
 record_log=record.log
 
 #We always want to check the last 100 requests

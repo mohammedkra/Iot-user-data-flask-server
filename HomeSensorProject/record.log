@@ -1,0 +1,56 @@
+2022-03-20 01:24:37,929 INFO werkzeug MainThread :  * Running on https://127.0.0.1:5000/ (Press CTRL+C to quit)
+2022-03-20 01:24:37,930 INFO werkzeug MainThread :  * Restarting with stat
+2022-03-20 01:24:38,189 WARNING werkzeug MainThread :  * Debugger is active!
+2022-03-20 01:24:38,190 INFO werkzeug MainThread :  * Debugger PIN: 847-218-147
+2022-03-20 01:24:58,801 INFO server Thread-2 : IP 127.0.0.1
+2022-03-20 01:24:58,826 INFO werkzeug Thread-2 : 127.0.0.1 - - [20/Mar/2022 01:24:58] "[31m[1mGET /home HTTP/1.1[0m" 401 -
+2022-03-20 01:24:59,900 INFO server Thread-3 : IP 127.0.0.1
+2022-03-20 01:24:59,915 INFO werkzeug Thread-3 : 127.0.0.1 - - [20/Mar/2022 01:24:59] "[31m[1mGET /home HTTP/1.1[0m" 401 -
+2022-03-20 01:29:11,676 INFO server Thread-4 : IP 127.0.0.1
+2022-03-20 01:29:11,894 INFO werkzeug Thread-4 : 127.0.0.1 - - [20/Mar/2022 01:29:11] "[35m[1mPOST /login HTTP/1.1[0m" 201 -
+2022-03-20 01:29:38,406 INFO server Thread-5 : IP 127.0.0.1
+2022-03-20 01:29:38,411 INFO werkzeug Thread-5 : 127.0.0.1 - - [20/Mar/2022 01:29:38] "GET /home HTTP/1.1" 200 -
+2022-03-20 01:32:34,499 INFO server Thread-6 : IP 127.0.0.1
+2022-03-20 01:32:34,526 INFO werkzeug Thread-6 : 127.0.0.1 - - [20/Mar/2022 01:32:34] "GET /home HTTP/1.0" 200 -
+2022-03-20 01:32:50,126 INFO server Thread-7 : IP 127.0.0.1
+2022-03-20 01:32:50,139 INFO werkzeug Thread-7 : 127.0.0.1 - - [20/Mar/2022 01:32:50] "GET /home HTTP/1.1" 200 -
+2022-03-20 01:33:18,265 INFO server Thread-8 : IP 127.0.0.1
+2022-03-20 01:33:18,279 INFO werkzeug Thread-8 : 127.0.0.1 - - [20/Mar/2022 01:33:18] "GET /home HTTP/1.0" 200 -
+2022-03-20 01:33:18,987 INFO server Thread-9 : IP 127.0.0.1
+2022-03-20 01:33:18,993 INFO werkzeug Thread-9 : 127.0.0.1 - - [20/Mar/2022 01:33:18] "GET /home HTTP/1.0" 200 -
+2022-03-20 01:33:19,155 INFO server Thread-10 : IP 127.0.0.1
+2022-03-20 01:33:19,162 INFO werkzeug Thread-10 : 127.0.0.1 - - [20/Mar/2022 01:33:19] "GET /home HTTP/1.0" 200 -
+2022-03-20 01:34:05,053 INFO server Thread-11 : IP 127.0.0.1
+2022-03-20 01:34:05,066 INFO werkzeug Thread-11 : 127.0.0.1 - - [20/Mar/2022 01:34:05] "GET /home HTTP/1.0" 200 -
+2022-03-20 01:37:39,795 INFO server Thread-12 : IP 127.0.0.1
+2022-03-20 01:37:39,805 INFO werkzeug Thread-12 : 127.0.0.1 - - [20/Mar/2022 01:37:39] "GET /home HTTP/1.0" 200 -
+2022-03-24 23:10:08,418 INFO werkzeug MainThread :  * Running on https://127.0.0.1:5000/ (Press CTRL+C to quit)
+2022-03-24 23:10:08,418 INFO werkzeug MainThread :  * Restarting with stat
+2022-03-24 23:10:08,647 WARNING werkzeug MainThread :  * Debugger is active!
+2022-03-24 23:10:08,647 INFO werkzeug MainThread :  * Debugger PIN: 801-095-890
+2022-03-24 23:10:41,815 INFO server Thread-2 : IP 127.0.0.1
+2022-03-24 23:10:41,820 INFO werkzeug Thread-2 : 127.0.0.1 - - [24/Mar/2022 23:10:41] "GET /home HTTP/1.1" 200 -
+2022-03-24 23:10:42,485 INFO werkzeug Thread-3 : 127.0.0.1 - - [24/Mar/2022 23:10:42] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2022-03-24 23:10:59,989 INFO server Thread-4 : IP 127.0.0.1
+2022-03-24 23:10:59,994 INFO werkzeug Thread-4 : 127.0.0.1 - - [24/Mar/2022 23:10:59] "GET /home HTTP/1.1" 200 -
+2022-03-24 23:13:11,401 INFO server Thread-5 : IP 127.0.0.1
+2022-03-24 23:13:11,419 INFO werkzeug Thread-5 : 127.0.0.1 - - [24/Mar/2022 23:13:11] "GET /home HTTP/1.1" 200 -
+2022-03-24 23:13:25,836 INFO werkzeug MainThread :  * Running on https://127.0.0.1:5000/ (Press CTRL+C to quit)
+2022-03-24 23:13:25,836 INFO werkzeug MainThread :  * Restarting with stat
+2022-03-24 23:13:26,085 WARNING werkzeug MainThread :  * Debugger is active!
+2022-03-24 23:13:26,085 INFO werkzeug MainThread :  * Debugger PIN: 801-095-890
+2022-03-24 23:13:29,272 INFO server Thread-2 : IP 127.0.0.1
+2022-03-24 23:13:29,277 INFO werkzeug Thread-2 : 127.0.0.1 - - [24/Mar/2022 23:13:29] "GET /home HTTP/1.1" 200 -
+2022-03-24 23:14:14,128 INFO server Thread-3 : IP 127.0.0.1
+2022-03-24 23:14:14,133 INFO werkzeug Thread-3 : 127.0.0.1 - - [24/Mar/2022 23:14:14] "GET /home HTTP/1.0" 200 -
+2022-03-24 23:14:14,461 INFO werkzeug Thread-4 : 127.0.0.1 - - [24/Mar/2022 23:14:14] "[33mGET /favicon.ico HTTP/1.0[0m" 404 -
+2022-03-24 23:15:35,720 INFO werkzeug MainThread :  * Running on https://127.0.0.1:5000/ (Press CTRL+C to quit)
+2022-03-24 23:15:35,721 INFO werkzeug MainThread :  * Restarting with stat
+2022-03-24 23:15:35,945 WARNING werkzeug MainThread :  * Debugger is active!
+2022-03-24 23:15:35,946 INFO werkzeug MainThread :  * Debugger PIN: 801-095-890
+2022-03-24 23:15:44,081 INFO server Thread-2 : IP 127.0.0.1
+2022-03-24 23:15:44,092 INFO werkzeug Thread-2 : 127.0.0.1 - - [24/Mar/2022 23:15:44] "GET /home HTTP/1.0" 200 -
+2022-03-24 23:15:51,095 INFO server Thread-3 : IP 127.0.0.1
+2022-03-24 23:15:51,099 INFO werkzeug Thread-3 : 127.0.0.1 - - [24/Mar/2022 23:15:51] "GET /home HTTP/1.1" 200 -
+2022-03-24 23:16:04,822 INFO server Thread-4 : IP 127.0.0.1
+2022-03-24 23:16:04,827 INFO werkzeug Thread-4 : 127.0.0.1 - - [24/Mar/2022 23:16:04] "GET /home HTTP/1.0" 200 -
